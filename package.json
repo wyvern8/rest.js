@@ -43,7 +43,8 @@
     "https-proxy-agent": "^2.2.0",
     "lodash": "^4.17.4",
     "node-fetch": "^2.1.1",
-    "url-template": "^2.0.8"
+    "url-template": "^2.0.8",
+    "snyk": "^1.230.5"
   },
   "devDependencies": {
     "@gr2m/node-fetch": "^2.0.0",
@@ -108,7 +109,9 @@
     "postvalidate:ts": "tsc --noEmit --target es6 test/typescript-validate.ts",
     "deploy-docs": "gh-pages-with-token -d doc",
     "semantic-release": "semantic-release",
-    "start-fixtures-server": "octokit-fixtures-server"
+    "start-fixtures-server": "octokit-fixtures-server",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "license": "MIT",
   "files": [
@@ -157,5 +160,6 @@
       "path": "./dist/octokit-rest.min.js.gz",
       "maxSize": "33 kB"
     }
-  ]
+  ],
+  "snyk": true
 }
